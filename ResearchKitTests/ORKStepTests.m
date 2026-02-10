@@ -503,8 +503,11 @@
     NSString *identifier = @"STEP";
     ORKLearnMoreInstructionStep *step = [[ORKLearnMoreInstructionStep alloc] initWithIdentifier:identifier];
     
-    //TODO: update per specs
     XCTAssertEqual([step identifier], identifier);
+}
+
+- (void)testLearnMoreItemInitRequiresInstructionStep {
+    XCTAssertThrowsSpecificNamed([[ORKLearnMoreItem alloc] initWithText:@"Learn more" learnMoreInstructionStep:nil], NSException, NSInvalidArgumentException);
 }
 
 @end
