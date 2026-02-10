@@ -37,6 +37,8 @@
 @implementation ORKLearnMoreItem
 
 - (instancetype)initWithText:(nullable NSString *)text learnMoreInstructionStep:(ORKLearnMoreInstructionStep *)learnMoreInstructionStep {
+    ORKThrowInvalidArgumentExceptionIfNil(learnMoreInstructionStep);
+
     self = [super init];
     if (self) {
         self.text = text;
